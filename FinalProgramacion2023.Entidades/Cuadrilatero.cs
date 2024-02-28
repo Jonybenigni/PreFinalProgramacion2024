@@ -49,16 +49,16 @@ namespace FinalProgramacion2023.Entidades
         }
 
 
-        public TipoDeCuadrilatero TipoCuadrilatero()
+        public TipodeCuadrilateros TipoCuadrilatero()
         {
 
             if (LadoA == LadoB)
             {
-                return TipoDeCuadrilatero.Cuadrado;
+                return TipodeCuadrilateros.Cuadrado;
             }
             else
             {
-                return TipoDeCuadrilatero.Rectangulo;
+                return TipodeCuadrilateros.Rectangulo;
             }
 
 
@@ -66,7 +66,7 @@ namespace FinalProgramacion2023.Entidades
 
         }
 
-        public enum TipoDeCuadrilatero
+        public enum TipodeCuadrilateros
         {
             Cuadrado,
             Rectangulo

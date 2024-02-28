@@ -152,17 +152,17 @@ namespace FinalProgramacion2023.Datos
 
         }
 
-        public List<Cuadrilatero> OrdenarAsc()
+        public List<Cuadrilatero> OrdenarAscendente()
         {
             return listaCuadrilateros.OrderBy(c => c.GetLadoA()).ToList();
         }
 
-        public List<Cuadrilatero> OrdenarDesc()
+        public List<Cuadrilatero> OrdenarDescendente()
         {
             return listaCuadrilateros.OrderByDescending(c => c.GetLadoA()).ToList();
         }
 
-        public bool Existe(Cuadrilatero cuadrilatero)
+        public bool CuadrilateroExiste(Cuadrilatero cuadrilatero)
         {
 
             listaCuadrilateros.Clear();

@@ -62,7 +62,7 @@ namespace FinalProgramacion2023.Windows
 
             }
             Cuadrilatero cuadrilatero = frm.GetCuadrilatero();
-            if (!repo.Existe(cuadrilatero))
+            if (!repo.CuadrilateroExiste(cuadrilatero))
             {
                 repo.Agregar(cuadrilatero);
                 txtCantidad.Text = repo.GetCantidad().ToString();
@@ -142,7 +142,7 @@ namespace FinalProgramacion2023.Windows
 
             }
             cuadrilatero = frm.GetCuadrilatero();
-            if (!repo.Existe(cuadrilatero))
+            if (!repo.CuadrilateroExiste(cuadrilatero))
             {
                 repo.Editar(cuadrilateroCopia, cuadrilatero);
                 SetearFila(filaSeleccionada, cuadrilatero);
@@ -211,14 +211,14 @@ namespace FinalProgramacion2023.Windows
 
         private void ascendenteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            lista = repo.OrdenarAsc();
+            lista = repo.OrdenarAscendente();
             MostrarDatosEnGrilla();
             ActualizarCantidadRegistros();
         }
 
         private void descendenteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            lista = repo.OrdenarDesc();
+            lista = repo.OrdenarDescendente();
             MostrarDatosEnGrilla();
             ActualizarCantidadRegistros();
         }
