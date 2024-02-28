@@ -223,15 +223,15 @@ namespace FinalProgramacion2023.Windows
             ActualizarCantidadRegistros();
         }
 
-        private void toolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void toolStripComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!filterOn)
             {
-                if (toolStripComboBox1.SelectedIndex == -1)
+                if (toolStripComboBox2.SelectedIndex == -1)
                 {
                     return;
                 }
-                var bordeFiltro = (Borde)toolStripComboBox1.SelectedItem;
+                var bordeFiltro = (Borde)toolStripComboBox2.SelectedItem;
                 lista = repo.Filtrar((int)bordeFiltro);
                 MostrarDatosEnGrilla();
                 filterOn = true;
@@ -257,6 +257,12 @@ namespace FinalProgramacion2023.Windows
         }
 
         private void toolStripComboBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void toolStripComboBox2_Click_1(object sender, EventArgs e)
         {
 
         }

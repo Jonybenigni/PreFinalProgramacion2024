@@ -35,6 +35,7 @@
             toolStripSeparator1 = new ToolStripSeparator();
             tsbFiltrar = new ToolStripDropDownButton();
             toolStripMenuItem2 = new ToolStripMenuItem();
+            toolStripComboBox1 = new ToolStripComboBox();
             tsbActualizar = new ToolStripButton();
             toolStripSeparator2 = new ToolStripSeparator();
             tsbOrdenar = new ToolStripDropDownButton();
@@ -53,7 +54,8 @@
             coltipo = new DataGridViewTextBoxColumn();
             txtCantidad = new TextBox();
             label1 = new Label();
-            toolStripComboBox1 = new ToolStripComboBox();
+            porColorToolStripMenuItem = new ToolStripMenuItem();
+            toolStripComboBox2 = new ToolStripComboBox();
             toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
@@ -112,7 +114,7 @@
             // 
             // tsbFiltrar
             // 
-            tsbFiltrar.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem2 });
+            tsbFiltrar.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem2, porColorToolStripMenuItem });
             tsbFiltrar.Image = Properties.Resources.filled_filter_32px;
             tsbFiltrar.ImageScaling = ToolStripItemImageScaling.None;
             tsbFiltrar.ImageTransparentColor = Color.Magenta;
@@ -129,6 +131,12 @@
             toolStripMenuItem2.Size = new Size(224, 26);
             toolStripMenuItem2.Text = "Por Area";
             toolStripMenuItem2.Click += toolStripMenuItem2_Click;
+            // 
+            // toolStripComboBox1
+            // 
+            toolStripComboBox1.Name = "toolStripComboBox1";
+            toolStripComboBox1.Size = new Size(121, 28);
+            toolStripComboBox1.Click += toolStripComboBox1_Click;
             // 
             // tsbActualizar
             // 
@@ -310,11 +318,18 @@
             label1.TabIndex = 0;
             label1.Text = "Cantidad:";
             // 
-            // toolStripComboBox1
+            // porColorToolStripMenuItem
             // 
-            toolStripComboBox1.Name = "toolStripComboBox1";
-            toolStripComboBox1.Size = new Size(121, 28);
-            toolStripComboBox1.Click += toolStripComboBox1_Click;
+            porColorToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { toolStripComboBox2 });
+            porColorToolStripMenuItem.Name = "porColorToolStripMenuItem";
+            porColorToolStripMenuItem.Size = new Size(224, 26);
+            porColorToolStripMenuItem.Text = "Por Color";
+            // 
+            // toolStripComboBox2
+            // 
+            toolStripComboBox2.Name = "toolStripComboBox2";
+            toolStripComboBox2.Size = new Size(121, 28);
+            toolStripComboBox2.Click += toolStripComboBox2_Click_1;
             // 
             // frmPrincipal
             // 
@@ -369,5 +384,7 @@
         private DataGridViewTextBoxColumn coltipo;
         private ToolStripDropDownButton tsbFiltrar;
         private ToolStripMenuItem toolStripMenuItem2;
+        private ToolStripMenuItem porColorToolStripMenuItem;
+        private ToolStripComboBox toolStripComboBox2;
     }
 }
