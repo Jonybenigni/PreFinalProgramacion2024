@@ -6,74 +6,98 @@ using System.Threading.Tasks;
 
 namespace FinalProgramacion2023.Entidades
 {
-
-    public class Cuadrilatero : ICloneable
+    public class Cuadrilatero
     {
-        //Atributos de la clase
-        private const int _CantidadLados = 2;
-        private double _ladoA;
-        private double _ladoB;
-        private Borde tipoDeBorde;
+        private int LadoA;
+        private int LadoB;
 
-        public Borde TipoDeBorde
+
+        private Borde borde;
+
+
+        private Color relleno;
+
+
+
+        public Borde Borde { get { return borde; } set { borde = value; } }
+        public Color Relleno { get { return relleno; } set { relleno = value; } }
+
+
+
+        public Cuadrilatero(int _medidaLadoA, int _medidaLadoB, Color relleno, Borde borde)
         {
-            get { return tipoDeBorde; }
-            set { tipoDeBorde = value; }
+            LadoA = _medidaLadoA;
+            LadoB = _medidaLadoB;
+            Relleno = relleno;
+            Borde = borde;
         }
 
-        private Color colorRelleno;
-
-        public Color ColorRelleno
-        {
-            get { return colorRelleno; }
-            set { colorRelleno = value; }
-        }
-
-        //Constructores
         public Cuadrilatero()
         {
+        }
 
-        }
-        public Cuadrilatero(double ladoA, double ladoB, Borde borde, Color color)
+        public object NoesCuadrilatero()
         {
-            _ladoA = ladoA;
-            _ladoB = ladoB;
-            TipoDeBorde = borde;
-            ColorRelleno = color;
-            //if (MedidaLado>0)
-            //{
-
-            //}
-            //else
-            //{
-            //    throw new ArgumentException("Medida del lado no válida");
-            //}
-        }
-        //Métodos acceden a atributos
-        public bool Validar()
-        {
-            return _ladoA > 0 && _ladoB > 0;
-        }
-        public double GetLadoA() => _ladoA;
-        public double GetLadoB() => _ladoB;
-        public void SetLadoA(double ladoA)
-        {
-            if (ladoA > 0)
+            if (LadoA > 0 && LadoB > 0)
             {
-                _ladoA = ladoA;
+                return true;
             }
-        }
-        public void SetLadoB(double ladoB)
-        {
-            if (ladoB > 0)
+            else
             {
-                _ladoB = ladoB;
+                return false;
             }
         }
 
-        
-        public double GetPerimetro() => 2 * (_ladoA + _ladoB);
-        public double GetSuperficie() => _ladoA * _ladoB;
+
+        public TipoDeCuadrilatero TipoCuadrilatero()
+        {
+
+            if (LadoA == LadoB)
+            {
+                return TipoDeCuadrilatero.Cuadrado;
+            }
+            else
+            {
+                return TipoDeCuadrilatero.Rectangulo;
+            }
+
+
+
+
+        }
+
+        public enum TipoDeCuadrilatero
+        {
+            Cuadrado,
+            Rectangulo
+
+        }
+
+
+
+        public double GetPerimetro() => 2 * LadoA + 2 * LadoB;
+        public double GetArea() => LadoA * LadoB;
+
+
+
+
+        public int GetLadoA() => LadoA;
+        public int GetLadoB() => LadoB;
+
+        public void SetLadoA(int medidaA)
+        {
+            if (medidaA > 0)
+            {
+                LadoA = medidaA;
+            }
+        }
+        public void SetLadoB(int medidaB)
+        {
+            if (medidaB > 0)
+            {
+                LadoB = medidaB;
+            }
+        }
 
         public object Clone()
         {

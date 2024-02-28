@@ -42,8 +42,10 @@
             txtLadoA = new TextBox();
             label1 = new Label();
             errorProvider1 = new ErrorProvider(components);
+            errorProvider2 = new ErrorProvider(components);
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider2).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -98,6 +100,7 @@
             // 
             // cboRelleno
             // 
+            cboRelleno.DropDownStyle = ComboBoxStyle.DropDownList;
             cboRelleno.FormattingEnabled = true;
             cboRelleno.Location = new Point(115, 153);
             cboRelleno.Margin = new Padding(3, 4, 3, 4);
@@ -123,6 +126,7 @@
             btnCancelar.TabIndex = 12;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnOK
             // 
@@ -173,6 +177,10 @@
             // 
             errorProvider1.ContainerControl = this;
             // 
+            // errorProvider2
+            // 
+            errorProvider2.ContainerControl = this;
+            // 
             // frmCuadrilatero
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -194,6 +202,7 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -213,5 +222,6 @@
         private TextBox txtLadoA;
         private Label label1;
         private ErrorProvider errorProvider1;
+        private ErrorProvider errorProvider2;
     }
 }
